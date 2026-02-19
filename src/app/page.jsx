@@ -4,7 +4,7 @@ function Console() {
   return (
     <div
       className="flex flex-col scanlines items-start gap-1 rounded-2xl bg-zinc-950
-      border border-zinc-700 w-[80vw] h-[80vh] p-4"
+      border border-green-500 w-[80vw] h-[80vh] p-4"
       id="console"
     >
       <div className="flex flex-col gap-1" id="console-text">
