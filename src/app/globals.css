@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Share Tech Mono';
+  src: url('/fonts/ShareTechMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #0e0e0e;
   --foreground: #45dd00;
@@ -13,13 +20,36 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+* {
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .scanlines {
-  background: linear-gradient(to bottom, #09090b 10%, transparent 10%),
-    linear-gradient(to top, rgba(12, 12, 13, 0.6) 10%, transparent 10%);
-  background-size: 5px 5px;
+  position: relative;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.18) 2px,
+          rgba(0, 0, 0, 0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Make sure text inside scanlines is above the overlay */
+.scanlines > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Firefox */

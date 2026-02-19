@@ -1,12 +1,14 @@
 import Image from "next/image";
 
 function Console() {
-  "use client";
   return (
     <div
-      className="flex flex-col scanlines items-start gap-1 rounded-2xl bg-zinc-950 border-1 border-zinc-700 w-[80vw] h-[80vh] p-4">
-      <span>zytronium@web:~$ echo Hello World!</span>
-      <span>Hello World!</span>
+      className="flex flex-col scanlines items-start gap-1 rounded-2xl bg-zinc-950
+      border border-zinc-700 w-[80vw] h-[80vh] p-4"
+      id="console"
+    >
+      <div className="flex flex-col gap-1" id="console-text">
+      </div>
     </div>
   );
 }
