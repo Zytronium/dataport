@@ -8,8 +8,9 @@
 }
 
 :root {
-  --background: #0e0e0e;
+  --background: #0d110d;
   --foreground: #45dd00;
+  --page-bg: #050505;
 }
 
 @theme inline {
